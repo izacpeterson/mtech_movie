@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400&display=swap");
+
+/* Color Theme Swatches in Hex */
+$Coral-Dunes-1-hex: #34495e;
+$Coral-Dunes-2-hex: #715a68;
+$Coral-Dunes-3-hex: #f6c29a;
+$Coral-Dunes-4-hex: #f5ad92;
+$Coral-Dunes-5-hex: #f18985;
+
+$back-1: $Coral-Dunes-1-hex;
+$back-2: $Coral-Dunes-2-hex;
+
+$primary: $Coral-Dunes-5-hex;
+$secondary: $Coral-Dunes-4-hex;
+$tertiary: $Coral-Dunes-3-hex;
+
+$text: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Jost", sans-serif;
+}
+header {
+  background-color: $back-1;
+  color: $text;
+
+  padding: 10px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: $back-2;
+  color: $text;
+}
