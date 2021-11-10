@@ -1,7 +1,4 @@
-import { fetchData } from "./app.js";
-
-const API_KEY = "26e99d56c670a23e5b53252a41402ce1";
-const URL = "https://api.themoviedb.org/3/";
+import { fetchData, URL, API_KEY } from "./app.js";
 
 //API search endpoint
 const SEARCH = `search/movie/?api_key=${API_KEY}&query=`;
