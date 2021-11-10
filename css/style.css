@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
 /* Color Theme Swatches in Hex */
 * {
   margin: 0;
@@ -10,6 +10,48 @@ header {
   background-color: #34495e;
   color: #fff;
   padding: 10px;
+  box-shadow: 0 0 10px grey;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: #715a68;
+  margin: 50px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px grey;
+  border-radius: 5px;
+}
+form h2 {
+  margin: 10px;
+  color: white;
+  font-weight: 300;
+}
+form span {
+  display: flex;
+}
+form input {
+  padding: 10px;
+  background: white;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+form button {
+  padding: 10px;
+  background: #f18985;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  transition: 0.1s;
+}
+form button:hover {
+  color: white;
 }
 
 footer {

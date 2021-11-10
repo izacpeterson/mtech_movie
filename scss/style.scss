@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
 
 /* Color Theme Swatches in Hex */
 $Coral-Dunes-1-hex: #34495e;
@@ -16,17 +16,59 @@ $tertiary: $Coral-Dunes-3-hex;
 
 $text: #fff;
 
+$border-radius: 5px;
+
 * {
   margin: 0;
   padding: 0;
-
   font-family: "Jost", sans-serif;
 }
+
 header {
   background-color: $back-1;
   color: $text;
-
   padding: 10px;
+  box-shadow: 0 0 10px grey;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  background-color: $back-2;
+  margin: 50px;
+  padding: 20px;
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px grey;
+  border-radius: $border-radius;
+  h2 {
+    margin: 10px;
+    color: white;
+    font-weight: 300;
+  }
+  span {
+    display: flex;
+  }
+  input {
+    padding: 10px;
+    background: white;
+    border: none;
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+  button {
+    padding: 10px;
+    background: $primary;
+    border: none;
+    border-radius: 0 $border-radius $border-radius 0;
+    transition: 0.1s;
+    &:hover {
+      color: white;
+    }
+  }
 }
 footer {
   position: fixed;
