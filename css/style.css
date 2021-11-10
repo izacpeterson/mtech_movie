@@ -1,40 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
-/* Color Theme Swatches in Hex */
 * {
   margin: 0;
   padding: 0;
   font-family: "Jost", sans-serif;
 }
 
+html {
+  background: #161616;
+}
+
 header {
-  background-color: #34495e;
+  background-color: #222222;
   color: #fff;
   padding: 10px;
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px #090909;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: #f16e6e;
+}
+
+h2 {
+  color: #f16e6e;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 16px;
 }
 
 form {
-  background-color: #715a68;
+  background-color: #222222;
   margin: 50px;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px grey;
   border-radius: 5px;
-}
-form h2 {
-  margin: 10px;
-  color: white;
-  font-weight: 300;
+  color: #fff;
+  width: 75vw;
+  box-shadow: 0 0 10px #090909;
 }
 form span {
+  display: flex;
+}
+form .searchBar {
+  width: 100%;
   display: flex;
 }
 form input {
@@ -42,10 +63,14 @@ form input {
   background: white;
   border: none;
   border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 16px;
+  flex-grow: 1;
 }
 form button {
   padding: 10px;
-  background: #f18985;
+  font-size: 16px;
+  background: #f16e6e;
   border: none;
   border-radius: 0 5px 5px 0;
   transition: 0.1s;
@@ -59,8 +84,47 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 5px;
-  background-color: #715a68;
+  background-color: #222222;
   color: #fff;
+}
+
+#searchResult {
+  margin-bottom: 30px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+#searchResult li {
+  width: 33%;
+}
+
+.movie a {
+  display: flex;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+}
+.movie a h2 {
+  color: #f16e6e;
+}
+.movie a h3 {
+  color: #fff;
+}
+.movie a img {
+  height: 150px;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  #searchResult {
+    margin-bottom: 30px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #searchResult li {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
