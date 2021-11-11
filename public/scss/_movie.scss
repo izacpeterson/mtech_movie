@@ -1,4 +1,29 @@
 @import "global";
-#details {
-  color: $primary;
+#movie {
+  display: flex;
+  #movie-left {
+    width: 30%;
+    min-width: 500px;
+    #movie-title {
+      #title {
+      }
+    }
+    #movie-img {
+    }
+  }
+  #movie-right {
+    width: 70%;
+    #movie-details {
+      #genre {
+        color: $primary;
+      }
+      #details {
+        color: $primary;
+      }
+    }
+    #trailers {
+    }
+  }
+  #feedback-section {
+  }
 }

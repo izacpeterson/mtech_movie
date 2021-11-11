@@ -1,7 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
-#details {
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
+#movie {
+  display: flex;
+}
+#movie #movie-left {
+  width: 30%;
+  min-width: 500px;
+}
+#movie #movie-right {
+  width: 70%;
+}
+#movie #movie-right #movie-details #genre {
   color: #f16e6e;
+}
+#movie #movie-right #movie-details #details {
+  color: #f16e6e;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login input {
+  width: 100%;
+  border: none;
+  margin: 10px;
+  padding: 5px;
 }
 
 * {
@@ -27,6 +52,9 @@ header a {
   text-decoration: none;
   color: #fff;
 }
+header h1 {
+  flex-grow: 1;
+}
 
 main {
   display: flex;
@@ -50,7 +78,19 @@ h3 {
   font-size: 16px;
 }
 
-form {
+button {
+  padding: 10px;
+  font-size: 16px;
+  background: #f16e6e;
+  border: none;
+  transition: 0.1s;
+  border-radius: 5px;
+}
+button:hover {
+  color: white;
+}
+
+#searchBox {
   background-color: #222222;
   margin: 50px;
   padding: 20px;
@@ -63,14 +103,14 @@ form {
   width: 75vw;
   box-shadow: 0 0 10px #090909;
 }
-form span {
+#searchBox span {
   display: flex;
 }
-form .searchBar {
+#searchBox .searchBar {
   width: 100%;
   display: flex;
 }
-form input {
+#searchBox input {
   padding: 10px;
   background: white;
   border: none;
@@ -79,16 +119,8 @@ form input {
   font-size: 16px;
   flex-grow: 1;
 }
-form button {
-  padding: 10px;
-  font-size: 16px;
-  background: #f16e6e;
-  border: none;
+#searchBox button {
   border-radius: 0 5px 5px 0;
-  transition: 0.1s;
-}
-form button:hover {
-  color: white;
 }
 
 footer {

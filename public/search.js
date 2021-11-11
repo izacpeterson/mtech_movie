@@ -1,4 +1,4 @@
-import { fetchData, URL, API_KEY, ActiveUser } from "./app.js";
+import { fetchData, URL, API_KEY } from "./app.js";
 
 //API search endpoint
 const SEARCH = `search/movie/?api_key=${API_KEY}&query=`;
