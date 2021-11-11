@@ -12,9 +12,16 @@ const TRAILER = `/movie/${params.id}/videos?api_key=${API_KEY}`;
 const MOVIE_AGE = `/movie/${params.id}/release_dates?api_key=${API_KEY}`;
 fetchData(URL + MOVIE, (jsonData) => {
   console.log(jsonData);
+  let genres_names = [];
+  let genres_ids = [];
   document.getElementById("title").innerText = jsonData.title;
   document.getElementById("movie-img").innerHTML = `<img src="https://image.tmdb.org/t/p/w500/${jsonData.poster_path}"/>`;
   document.getElementById("details").innerText = jsonData.overview;
+  for (let i = 0; i < jsonData.genres.length; i++) {
+    genres_ids.push(jsonData.genres[i].id);
+    genres_names.push(jsonData.genres[i].name);
+  }
+  document.getElementById("genre").innerText = `Genres: ${genres_names}`;
 });
 fetchData(URL + MOVIE_AGE, (jsonData) => {
   console.log(jsonData);
