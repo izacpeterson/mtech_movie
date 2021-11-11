@@ -1,29 +1,32 @@
-import { fetchData, URL, API_KEY } from "./app.js";
+import { fetchData, URL, API_KEY, ActiveUser } from "./app.js";
 
 //API search endpoint
 const SEARCH = `search/movie/?api_key=${API_KEY}&query=`;
+
+//API popular movies endpoint
 const POPULAR = `movie/popular?api_key=${API_KEY}`;
 
-//Search for movie
-// fetchData(URL + SEARCH + "Dune", (jsonData) => {
-//   console.log(jsonData);
-// });
+//populates search list with current popular movies
 fetchData(URL + POPULAR, populateList);
 
+//search event listener
 document.querySelector("#searchBtn").addEventListener("click", (event) => {
   event.preventDefault();
 
   let query = document.querySelector("#queryText").value;
   console.log(query);
 
+  //fetches data from API, sends to populateList function as callback
   fetchData(URL + SEARCH + query, populateList);
 });
 
+//callback funciton to process fetched data
 function populateList(jsonData) {
   console.log(jsonData);
   let searchList = document.querySelector("#searchResult");
   searchList.innerHTML = "";
 
+  //populates DOM with search results. Content enclosed in an A tag, to reference/send movie ID to movie detail page
   jsonData.results.forEach((movie) => {
     searchList.innerHTML += `
       <li class="movie">
