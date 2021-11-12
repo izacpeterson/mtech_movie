@@ -10,6 +10,10 @@ console.log(params);
 const MOVIE = `/movie/${params.id}?api_key=${API_KEY}`;
 const TRAILER = `/movie/${params.id}/videos?api_key=${API_KEY}`;
 const MOVIE_AGE = `/movie/${params.id}/release_dates?api_key=${API_KEY}`;
+const REC_MOVIE =`/movie/${params.id}/recommendations?api_key=${API_KEY}`;
+fetchData(URL + REC_MOVIE, (jsonData) =>{
+  console.log(jsonData)
+})
 fetchData(URL + MOVIE, (jsonData) => {
   console.log(jsonData);
   let genres_names = [];
@@ -41,11 +45,16 @@ fetchData(URL + TRAILER, (jsonData) => {
     document.getElementById("trailer").innerHTML = `<iframe width="420" height="315"
   src="https://www.youtube.com/embed/${jsonData.results[counter].key}">
   </iframe>`;
+    let num1 = document.getElementById('curent-num');
+    let num2 = document.getElementById('total');
+    num2.innerText = jsonData.results.length;
     document.querySelector("#next").addEventListener("click", (next) => {
       counter += 1;
       if (counter > jsonData.results.length - 1) {
         counter = 0;
       }
+      num1.innerText = counter+1;
+      
       document.getElementById("trailer").innerHTML = `<iframe width="420" height="315"
     src="https://www.youtube.com/embed/${jsonData.results[counter].key}">
     </iframe>`;
@@ -55,6 +64,8 @@ fetchData(URL + TRAILER, (jsonData) => {
       if (counter < 0) {
         counter = jsonData.results.length - 1;
       }
+      num1.innerText = counter+1;
+      
       document.getElementById("trailer").innerHTML = `<iframe width="420" height="315"
     src="https://www.youtube.com/embed/${jsonData.results[counter].key}">
     </iframe>`;
