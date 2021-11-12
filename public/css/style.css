@@ -17,6 +17,9 @@
 #movie #movie-right #movie-details #details {
   color: #f16e6e;
 }
+#movie #movie-right #trailers #trailer-buttons #trail-num {
+  color: #f16e6e;
+}
 .login {
   display: flex;
   flex-direction: column;
