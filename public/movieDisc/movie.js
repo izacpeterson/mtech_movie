@@ -13,13 +13,23 @@ const MOVIE_AGE = `/movie/${params.id}/release_dates?api_key=${API_KEY}`;
 const REC_MOVIE =`/movie/${params.id}/recommendations?api_key=${API_KEY}`;
 fetchData(URL + REC_MOVIE, (jsonData) =>{
   console.log(jsonData)
+  let reco = document.getElementById('rec');
+  reco.innerHTML = '';
+  jsonData.results.forEach(rec =>{
+    reco.innerHTML+=`<div id=${rec.id}>
+                        <a href="index.html?id=${rec.id}">
+                          <img class="movie-image"  src="https://image.tmdb.org/t/p/w500/${rec.poster_path}" alt="recomened"/>
+                          <h3 class="name">${rec.title}</h3>
+                        </a>
+                      </div>`
+  })
 })
 fetchData(URL + MOVIE, (jsonData) => {
   console.log(jsonData);
   let genres_names = [];
   let genres_ids = [];
   document.getElementById("title").innerText = jsonData.title;
-  document.getElementById("movie-img").innerHTML = `<img src="https://image.tmdb.org/t/p/w500/${jsonData.poster_path}"/>`;
+  document.getElementById("movie-img").innerHTML = `<img  src="https://image.tmdb.org/t/p/w500/${jsonData.poster_path}" alt="${jsonData.title}"/>`;
   document.getElementById("details").innerText = jsonData.overview;
   for (let i = 0; i < jsonData.genres.length; i++) {
     genres_ids.push(jsonData.genres[i].id);
@@ -42,7 +52,7 @@ fetchData(URL + MOVIE_AGE, (jsonData) => {
 fetchData(URL + TRAILER, (jsonData) => {
   console.log(jsonData);
   if (jsonData.results.length != 0) {
-    document.getElementById("trailer").innerHTML = `<iframe width="420" height="315"
+    document.getElementById("trailer").innerHTML = `<iframe width="420" height="315" title="trailer"
   src="https://www.youtube.com/embed/${jsonData.results[counter].key}">
   </iframe>`;
     let num1 = document.getElementById('curent-num');

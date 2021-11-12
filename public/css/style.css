@@ -8,6 +8,10 @@
   width: 30%;
   min-width: 500px;
 }
+#movie #movie-left #movie-img img {
+  width: 500px;
+  height: 750px;
+}
 #movie #movie-right {
   width: 70%;
 }
@@ -17,9 +21,40 @@
 #movie #movie-right #movie-details #details {
   color: #f16e6e;
 }
+#movie #movie-right #trailers #trailer-buttons {
+  display: flex;
+  align-items: center;
+}
 #movie #movie-right #trailers #trailer-buttons #trail-num {
   color: #f16e6e;
+  margin-top: 10px;
 }
+#movie #movie-right #rec {
+  width: 100%;
+  height: 310px;
+  overflow-x: scroll;
+  display: flex;
+  background-color: #222222;
+}
+#movie #movie-right #rec div {
+  margin: 10px 35px;
+}
+#movie #movie-right #rec div .movie-image {
+  width: 163px;
+  height: 230px;
+  margin: 0;
+  padding: 0;
+}
+#movie #movie-right #rec div .name {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
 .login {
   display: flex;
   flex-direction: column;

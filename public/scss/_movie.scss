@@ -9,7 +9,11 @@
       }
     }
     #movie-img {
+      img{
+      width: 500px;
+      height: 750px;
     }
+  }
   }
   #movie-right {
     width: 70%;
@@ -23,12 +27,42 @@
     }
     #trailers {
       #trailer-buttons{
+        
+        display: flex;
+        align-items: center;
         #trail-num{
           color:$primary;
+          margin-top: 10px;
         }
       }
+    }
+    #rec {
+      width: 100%;
+      height: 310px;
+      overflow-x: scroll;
+      display: flex;
+      background-color: $back-2;
+      div{
+        margin:10px 35px;
+        .movie-image{
+          width: 163px;
+          height: 230px;
+          margin:0;
+          padding: 0;
+        }
+        .name{
+          margin:0;
+          text-align: center;
+          padding: 0;
+          color: $text;
+        }
+      }
+      
     }
   }
   #feedback-section {
   }
+}
+a{
+  text-decoration: none;
 }
