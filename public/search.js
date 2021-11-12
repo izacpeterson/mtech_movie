@@ -1,7 +1,7 @@
 import { fetchData, URL, API_KEY } from "./app.js";
 
 //API search endpoint
-const SEARCH = `search/movie/?api_key=${API_KEY}&query=`;
+const SEARCH = `search/movie?api_key=${API_KEY}&query=`;
 
 //API popular movies endpoint
 const POPULAR = `movie/popular?api_key=${API_KEY}`;

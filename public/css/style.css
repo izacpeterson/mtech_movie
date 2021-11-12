@@ -16,17 +16,17 @@
   width: 70%;
 }
 #movie #movie-right #movie-details #genre {
-  color: #f16e6e;
+  color: #c22d3c;
 }
 #movie #movie-right #movie-details #details {
-  color: #f16e6e;
+  color: #c22d3c;
 }
 #movie #movie-right #trailers #trailer-buttons {
   display: flex;
   align-items: center;
 }
 #movie #movie-right #trailers #trailer-buttons #trail-num {
-  color: #f16e6e;
+  color: #c22d3c;
   margin-top: 10px;
 }
 #movie #movie-right #rec {
@@ -68,7 +68,7 @@ a {
 }
 
 li {
-  color: #f16e6e;
+  color: #c22d3c;
   list-style: none;
 }
 
@@ -107,11 +107,11 @@ main {
 }
 
 h1 {
-  color: #f16e6e;
+  color: #c22d3c;
 }
 
 h2 {
-  color: #f16e6e;
+  color: #c22d3c;
   font-weight: 400;
   font-size: 20px;
 }
@@ -124,7 +124,7 @@ h3 {
 button {
   padding: 10px;
   font-size: 16px;
-  background: #f16e6e;
+  background: #c22d3c;
   border: none;
   transition: 0.1s;
   border-radius: 5px;
@@ -192,7 +192,7 @@ footer {
   color: black;
 }
 .movie a h2 {
-  color: #f16e6e;
+  color: #c22d3c;
 }
 .movie a h3 {
   color: #fff;
@@ -202,7 +202,7 @@ footer {
   margin-right: 20px;
 }
 .movie a span {
-  color: #f16e6e;
+  color: #c22d3c;
 }
 
 @media only screen and (max-width: 600px) {
