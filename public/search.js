@@ -1,7 +1,4 @@
 import { fetchData, URL, API_KEY } from "./app.js";
-import { saveMovie } from "./save-movie.js";
-
-saveMovie("testing123");
 
 //API search endpoint
 const SEARCH = `search/movie/?api_key=${API_KEY}&query=`;

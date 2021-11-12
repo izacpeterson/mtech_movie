@@ -2,6 +2,8 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
+import { URL, API_KEY, fetchData } from "../app.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCLC8jtwaCzmE_B2HiJ7NsaBQIQZ4J_1nE",
   authDomain: "mtech-movie.firebaseapp.com",
@@ -61,9 +63,14 @@ async function dispMovies(uid) {
   if (docSnap.exists()) {
     let movies = docSnap.data().movies;
     console.log(movies);
+    console.log(API_KEY);
 
     movies.forEach((movie) => {
-      document.querySelector("#movieList").innerHTML += `<li>${movie}</li>`;
+      console.log(URL);
+      fetchData(`${URL}movie/${movie}?api_key=${API_KEY}`, (jsonData) => {
+        console.log(jsonData);
+        document.querySelector("#movieList").innerHTML += `<li>${jsonData.title}</li>`;
+      });
     });
   }
 }
