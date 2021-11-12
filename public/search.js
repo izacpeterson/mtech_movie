@@ -1,4 +1,7 @@
 import { fetchData, URL, API_KEY } from "./app.js";
+import { saveMovie } from "./save-movie.js";
+
+saveMovie("testing123");
 
 //API search endpoint
 const SEARCH = `search/movie/?api_key=${API_KEY}&query=`;
@@ -14,7 +17,6 @@ document.querySelector("#searchBtn").addEventListener("click", (event) => {
   event.preventDefault();
 
   let query = document.querySelector("#queryText").value;
-  console.log(query);
 
   //fetches data from API, sends to populateList function as callback
   fetchData(URL + SEARCH + query, populateList);
@@ -22,7 +24,6 @@ document.querySelector("#searchBtn").addEventListener("click", (event) => {
 
 //callback funciton to process fetched data
 function populateList(jsonData) {
-  console.log(jsonData);
   let searchList = document.querySelector("#searchResult");
   searchList.innerHTML = "";
 
@@ -31,7 +32,7 @@ function populateList(jsonData) {
     searchList.innerHTML += `
       <li class="movie">
         <a href="movieDisc/index.html?id=${movie.id}">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}"/>
+            <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}-poster"/>
             <div class="movieData">
                 <h2>${movie.title}</h2>
                 <h3>Release Date: ${movie.release_date}</h3>
