@@ -1,4 +1,5 @@
 import { fetchData } from "../app.js";
+import { saveMovie } from "../save-movie.js";
 let counter = 0;
 const API_KEY = "26e99d56c670a23e5b53252a41402ce1";
 const URL = "https://api.themoviedb.org/3/";
@@ -84,3 +85,6 @@ fetchData(URL + TRAILER, (jsonData) => {
     document.getElementById("trailers").innerHTML = "";
   }
 });
+document.getElementById('savor').addEventListener('click', test =>{
+  saveMovie(params.ids)
+})
