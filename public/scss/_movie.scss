@@ -9,11 +9,11 @@
       }
     }
     #movie-img {
-      img{
-      width: 500px;
-      height: 750px;
+      img {
+        width: 500px;
+        height: 750px;
+      }
     }
-  }
   }
   #movie-right {
     width: 70%;
@@ -26,12 +26,11 @@
       }
     }
     #trailers {
-      #trailer-buttons{
-        
+      #trailer-buttons {
         display: flex;
         align-items: center;
-        #trail-num{
-          color:$primary;
+        #trail-num {
+          color: $primary;
           margin-top: 10px;
         }
       }
@@ -42,27 +41,26 @@
       overflow-x: scroll;
       display: flex;
       background-color: $back-2;
-      div{
-        margin:10px 35px;
-        .movie-image{
+      div {
+        margin: 10px 35px;
+        .movie-image {
           width: 163px;
           height: 230px;
-          margin:0;
+          margin: 0;
           padding: 0;
         }
-        .name{
-          margin:0;
+        .name {
+          margin: 0;
           text-align: center;
           padding: 0;
           color: $text;
         }
       }
-      
     }
   }
   #feedback-section {
   }
 }
-a{
+a {
   text-decoration: none;
 }
