@@ -86,5 +86,5 @@ fetchData(URL + TRAILER, (jsonData) => {
   }
 });
 document.getElementById('savor').addEventListener('click', test =>{
-  saveMovie(params.ids)
+  saveMovie(params.id)
 })
