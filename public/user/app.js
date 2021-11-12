@@ -44,28 +44,26 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     let username = user.displayName;
     document.querySelector("#username").innerHTML = username;
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
+
     const uid = user.uid;
+    dispMovies(uid);
+
     // ...
   } else {
     // ...
   }
 });
 
-const querySnapshot = await getDocs(collection(db, "users"));
-querySnapshot.forEach((doc) => {
-  console.log(doc);
-});
+async function dispMovies(uid) {
+  const docRef = doc(db, "users", uid);
+  const docSnap = await getDoc(docRef);
 
-await setDoc(doc(db, "users", "izac"), {
-  user: "izacpeterson@gmail.com",
-  movies: ["test", "test2", "test3"],
-});
+  if (docSnap.exists()) {
+    let movies = docSnap.data().movies;
+    console.log(movies);
 
-const ME = doc(db, "users", "izac");
-console.log(ME);
-
-const SNAP = await getDoc(ME);
-
-console.log(SNAP.data());
+    movies.forEach((movie) => {
+      document.querySelector("#movieList").innerHTML += `<li>${movie}</li>`;
+    });
+  }
+}
