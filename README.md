@@ -1,5 +1,5 @@
 # mtech_movie
-Live App: https://mtech-movie.web.app/
+Live App: https://devflix.io
 
 
 Trello: https://trello.com/b/WDRlnHEy/movie-app
