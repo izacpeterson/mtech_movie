@@ -1,6 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, setDoc, doc, getDoc, deleteDoc, updateDoc, deleteField, arrayRemove } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 import { URL, API_KEY, fetchData } from "../app.js";
 
@@ -68,22 +68,60 @@ async function dispMovies(uid) {
     console.log(API_KEY);
 
     movies.forEach((movie) => {
-      console.log(URL);
       fetchData(`${URL}movie/${movie}?api_key=${API_KEY}`, (jsonData) => {
-        console.log(jsonData);
         document.querySelector("#movieList").innerHTML += `
-        <li class="movie">
+        <li class="movie" id="movie-${jsonData.id}">
           <a href="../movieDisc/index.html?id=${jsonData.id}">  
             <img src="https://image.tmdb.org/t/p/w200/${jsonData.poster_path}" alt="${jsonData.title}-poster"/>
+          </a>
             <div class="movieData">
-              <h2>${jsonData.title}</h2>
+              <a href="../movieDisc/index.html?id=${jsonData.id}">  
+                <h2>${jsonData.title}</h2>
+              </a>
               <h3>Release Date: ${jsonData.release_date}</h3>
               <h3>Rating: ${jsonData.vote_average}/10</h3>
-              <span class="material-icons">delete</span>
+              <span class='movieBtnList'>
+                <button class="material-icons movieBtn" onclick="
+                  navigator.share({
+                  title: 'DevFlix: ${jsonData.title}',
+                  url: '../movieDisc/index.html?id=${jsonData.id}'
+                  })">share
+                </button>
+                <button id="${jsonData.id}" class="material-icons movieBtn removeBtn" >playlist_remove</button>
+          </span>
             </div>
-          </a>
         </li>`;
       });
     });
   }
+}
+
+document.querySelector("#movieList").addEventListener("click", (e) => {
+  if (e.target.classList[2] == "removeBtn") {
+    removeMove(e.target.id);
+  }
+});
+
+async function removeMove(id) {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      let username = user.displayName;
+      document.querySelector("#username").innerHTML = username;
+
+      const uid = user.uid;
+
+      const movieRef = doc(db, "users", uid);
+
+      updateDoc(movieRef, {
+        movies: arrayRemove(id),
+      });
+
+      let el = document.getElementById("movie-" + id);
+      el.remove();
+
+      // ...
+    } else {
+      // ...
+    }
+  });
 }

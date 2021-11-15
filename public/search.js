@@ -1,4 +1,5 @@
 import { fetchData, URL, API_KEY } from "./app.js";
+import { saveMovie } from "./save-movie.js";
 
 //API search endpoint
 const SEARCH = `search/movie?api_key=${API_KEY}&query=`;
@@ -29,14 +30,31 @@ function populateList(jsonData) {
     searchList.innerHTML += `
       <li class="movie">
         <a href="movieDisc/index.html?id=${movie.id}">
-            <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}-poster"/>
-            <div class="movieData">
-                <h2>${movie.title}</h2>
-                <h3>Release Date: ${movie.release_date}</h3>
-                <h3>Rating: ${movie.vote_average}/10</h3>
-                <!-- <span class="movieDescription">${movie.overview}</span> -->
-            </div>
+          <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}-poster"/>
         </a>
+        <div class="movieData">
+          <a href="movieDisc/index.html?id=${movie.id}">
+            <h2>${movie.title}</h2>
+          </a>
+          <h3>Release Date: ${movie.release_date}</h3>
+          <h3>Rating: ${movie.vote_average}/10</h3>
+          <!-- <span class="movieDescription">${movie.overview}</span> -->
+          <span class='movieBtnList'>
+            <button class="material-icons movieBtn" onclick="
+              navigator.share({
+                title: 'DevFlix: ${movie.title}',
+                url: 'movieDisc/index.html?id=${movie.id}'
+              })">share
+            </button>
+            <button id="${movie.id}" class="material-icons movieBtn addMov">playlist_add</button>
+          </span>
+        </div>
       </li>`;
   });
 }
+
+document.querySelector("#searchResult").addEventListener("click", (e) => {
+  if (e.target.classList[2] == "addMov") {
+    saveMovie(e.target.id);
+  }
+});
