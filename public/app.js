@@ -12,11 +12,6 @@ async function fetchData(url, callback) {
   callback(jsonData);
 }
 
-let ActiveUser = {
-  name: "Izac",
-  movies: [],
-};
-
 //Firebase
 
 // TODO: Replace the following with your app's Firebase project configuration
@@ -46,4 +41,4 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-export { fetchData, API_KEY, URL, ActiveUser, app };
+export { fetchData, API_KEY, URL, app };

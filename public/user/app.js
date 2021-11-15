@@ -50,6 +50,8 @@ onAuthStateChanged(auth, (user) => {
     const uid = user.uid;
     dispMovies(uid);
 
+    document.querySelector("#googleSignInButton").style.display = "none";
+
     // ...
   } else {
     // ...
