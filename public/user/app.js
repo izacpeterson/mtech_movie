@@ -69,7 +69,18 @@ async function dispMovies(uid) {
       console.log(URL);
       fetchData(`${URL}movie/${movie}?api_key=${API_KEY}`, (jsonData) => {
         console.log(jsonData);
-        document.querySelector("#movieList").innerHTML += `<li>${jsonData.title}</li>`;
+        document.querySelector("#movieList").innerHTML += `
+        <li class="movie">
+          <a href="../movieDisc/index.html?id=${jsonData.id}">  
+            <img src="https://image.tmdb.org/t/p/w200/${jsonData.poster_path}" alt="${jsonData.title}-poster"/>
+            <div class="movieData">
+              <h2>${jsonData.title}</h2>
+              <h3>Release Date: ${jsonData.release_date}</h3>
+              <h3>Rating: ${jsonData.vote_average}/10</h3>
+              <span class="material-icons">delete</span>
+            </div>
+          </a>
+        </li>`;
       });
     });
   }
