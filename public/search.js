@@ -1,5 +1,6 @@
 import { fetchData, URL, API_KEY } from "./app.js";
 import { saveMovie } from "./save-movie.js";
+import { saveComment, getComments } from "./comments.js";
 
 //API search endpoint
 const SEARCH = `search/movie?api_key=${API_KEY}&query=`;
@@ -57,4 +58,9 @@ document.querySelector("#searchResult").addEventListener("click", (e) => {
   if (e.target.classList[2] == "addMov") {
     saveMovie(e.target.id);
   }
+});
+
+saveComment("This movie was pretty good", 370172);
+getComments(370172, (data) => {
+  console.log(data);
 });

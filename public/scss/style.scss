@@ -147,7 +147,8 @@ footer {
 }
 
 .qr {
-  width: 100%;
+  width: 25%;
+  margin: 20px;
 }
 #socials {
   width: 100%;
@@ -184,7 +185,23 @@ footer {
     justify-content: center;
   }
 }
+#about {
+  color: white;
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+  #quote {
+    font-style: italic;
+  }
+  h2 {
+    margin-top: 20px;
+  }
+}
 @media only screen and (max-width: 600px) {
+  .qr {
+    width: 75%;
+  }
   .searchResult {
     margin-bottom: 30px;
     list-style: none;
