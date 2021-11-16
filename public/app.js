@@ -29,7 +29,7 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     let username = user.displayName.split(" ");
-    document.querySelector("#username").innerHTML = username[0];
+    // document.querySelector("#username").innerHTML = username[0];
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;

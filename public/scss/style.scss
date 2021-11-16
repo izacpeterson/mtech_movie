@@ -165,7 +165,25 @@ footer {
     justify-content: center;
   }
 }
-
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $back-2;
+  padding: 10px;
+  justify-content: space-around;
+  display: flex;
+  box-shadow: 0 0 10px black;
+  a,
+  button {
+    text-decoration: none;
+    color: $primary;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media only screen and (max-width: 600px) {
   .searchResult {
     margin-bottom: 30px;

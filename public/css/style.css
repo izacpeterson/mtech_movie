@@ -240,6 +240,26 @@ footer {
   justify-content: center;
 }
 
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #222222;
+  padding: 10px;
+  justify-content: space-around;
+  display: flex;
+  box-shadow: 0 0 10px black;
+}
+.navbar a,
+.navbar button {
+  text-decoration: none;
+  color: #e50913;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 600px) {
   .searchResult {
     margin-bottom: 30px;
