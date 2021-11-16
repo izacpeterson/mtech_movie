@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevFlix</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <script defer type="module" src="./movie.js"></script>
-  </head>
-  <body>
-    <header>
-      <a href="./../index.html"><h1>DevFlix</h1></a>
-    </header>
-    <div id="movie">
-      <div id="movie-left">
-        <div id="movie-title">
-          <h2 id="title-area"><span id="title"> sample</span> &#124; Rated:<span id="rate">sample R</span></h2>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevFlix</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../img/logo_192.png" />
+  <script defer type="module" src="./movie.js"></script>
+</head>
+
+<body>
+  <header>
+    <a href="./../index.html">
+      <h1>DevFlix</h1>
+    </a>
+  </header>
+  <div id="modal" class="hide-true">
+    <button id="close"> x</button>
+    <div id="vid"></div>
+  </div>
+  <div id="movie">
+    
+    <div id="movie-left">
+      <div id="movie-title">
+        <h1 id="title"></h1>
+        <p id="under-title"><span id="release">s 2021</span> <span id="rate">sample R</span> <span id="runtime"><span
+              id="runtime-h">s 2h</span> <span id="runtime-m">s 21m</span></span></p>
+      </div>
+      <div id="list-app-trailer"></div>
+      <div id="app-layout">
         <div id="movie-img"></div>
-        <button id="savor">save</button>
-      </div>
-      <div id="movie-right">
-        <div id="movie-details">
-          <p id="genre">sample</p>
-          <p id="details">sample</p>
+        <div id="app-details">
+          <div id="app-genre"></div>
+          <p id="app-overview"></p>
+          <button id="savor">save</button>
         </div>
-        <div id="trailers">
-          <div id="trailer"></div>
-          <div id="trailer-buttons">
-            <button id="previous">previous</button>
-            <h3 id="trail-num"><span id="curent-num">1</span> out of <span id="total">10</span></h3>
-            <button id="next">next</button>
-          </div>
-        </div>
-        <h2 id="reco">Recomended</h2>
-        <div id="rec"></div>
       </div>
-      <div id="feedback-section"></div>
     </div>
-  </body>
+    <div id="movie-right">
+      <div id="movie-details">
+        <p id="genre">sample</p>
+        <p id="details">sample</p>
+      </div>
+      <div id="trailers">
+        <div id="list-of-trailers">
+        <div class="trailer"></div>
+        </div>
+
+
+      </div>
+      <h2 id="reco">Recomended</h2>
+      <div id="rec"></div>
+      
+    </div>
+    <div id="feedback-section"></div>
+  </div>
+</body>
+
 </html>
