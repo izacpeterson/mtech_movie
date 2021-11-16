@@ -1,6 +1,6 @@
 {
-  "name": "MTECH Movie App",
-  "short_name": "Movies",
+  "name": "DevFlix.io",
+  "short_name": "DevFlix",
   "display": "standalone",
   "background_color": "#3b3b3b",
   "theme_color": "#3b3b3b",

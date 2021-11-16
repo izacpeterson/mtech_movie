@@ -23,7 +23,7 @@ function saveMovie(movID) {
       const uid = user.uid;
 
       const newMov = doc(db, "users", uid);
-      setDoc(newMov, { movies: arrayUnion(movID) }, { merge: true });
+      setDoc(newMov, { movies: arrayUnion(String(movID)) }, { merge: true });
 
       // ...
     } else {

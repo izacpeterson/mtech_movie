@@ -1,6 +1,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, setDoc, doc, getDoc, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { saveMovie } from "./save-movie.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCLC8jtwaCzmE_B2HiJ7NsaBQIQZ4J_1nE",
@@ -15,6 +16,8 @@ const db = getFirestore();
 const auth = getAuth();
 
 function saveComment(comment, movieID) {
+  saveMovie(movieID);
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const newMov = doc(db, "movies", String(movieID));

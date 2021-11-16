@@ -60,7 +60,7 @@ document.querySelector("#searchResult").addEventListener("click", (e) => {
   }
 });
 
-saveComment("This movie was pretty good", 370172);
-getComments(370172, (data) => {
-  console.log(data);
-});
+// saveComment("This movie was pretty good", 796499);
+// getComments(796499, (data) => {
+//   console.log(data);
+// });
