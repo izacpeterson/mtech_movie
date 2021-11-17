@@ -35,8 +35,7 @@ onAuthStateChanged(auth, (user) => {
     const uid = user.uid;
     // ...
   } else {
-    document.querySelector("#username").innerHTML = "Login";
-
+    // document.querySelector("#username").innerHTML = "Login";
     // ...
   }
 });

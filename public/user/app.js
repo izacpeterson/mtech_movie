@@ -81,13 +81,13 @@ async function dispMovies(uid) {
               <h3>Release Date: ${jsonData.release_date}</h3>
               <h3>Rating: ${jsonData.vote_average}/10</h3>
               <span class='movieBtnList'>
-                <button class="material-icons movieBtn" onclick="
+                <button class="material-icons movieBtn icon-Btn" onclick="
                   navigator.share({
                   title: 'DevFlix: ${jsonData.title}',
                   url: '../movieDisc/index.html?id=${jsonData.id}'
                   })">share
                 </button>
-                <button id="${jsonData.id}" class="material-icons movieBtn removeBtn" >playlist_remove</button>
+                <button id="${jsonData.id}" class="material-icons movieBtn removeBtn icon-Btn" >playlist_remove</button>
           </span>
             </div>
         </li>`;

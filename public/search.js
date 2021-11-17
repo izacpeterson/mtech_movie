@@ -41,13 +41,13 @@ function populateList(jsonData) {
           <h3>Rating: ${movie.vote_average}/10</h3>
           <!-- <span class="movieDescription">${movie.overview}</span> -->
           <span class='movieBtnList'>
-            <button class="material-icons movieBtn" onclick="
+            <button class="material-icons movieBtn icon-Btn" onclick="
               navigator.share({
                 title: 'DevFlix: ${movie.title}',
                 url: 'movieDisc/index.html?id=${movie.id}'
               })">share
             </button>
-            <button id="${movie.id}" class="material-icons movieBtn addMov">playlist_add</button>
+            <button id="${movie.id}" class="material-icons movieBtn addMov icon-Btn">playlist_add</button>
           </span>
         </div>
       </li>`;

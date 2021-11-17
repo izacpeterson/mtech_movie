@@ -27,19 +27,29 @@
         <span id="movieInfoRight">
           <span id="description"></span>
           <span class="movieBtnList">
-            <button class="material-icons movieBtn" id="shareMovie">share</button>
-            <button class="material-icons movieBtn" id="addMovie ">playlist_add</button>
+            <button class="material-icons movieBtn icon-Btn" id="shareMovie">share</button>
+            <button class="material-icons movieBtn icon-Btn" id="addMovie ">playlist_add</button>
           </span>
         </span>
       </div>
+      <h2>Rate</h2>
+      <div id="rate"></div>
       <h2>Trailers</h2>
       <div id="trailers"></div>
+      <div id="comments">
+        <h2>Comments</h2>
+        <ul id="commentList"></ul>
+        <form action="">
+          <textarea name="" id="commentText" placeholder="Your deepest thoughts and feelings go here"></textarea>
+          <button id="addComment" class="solid-Btn">Add Comment</button>
+        </form>
+      </div>
     </main>
     <nav class="navbar">
-      <a href="../" class="material-icons">home</a>
-      <button class="material-icons" onclick="navigator.share({title: 'DevFlix', url: 'https://devflix.io'})">share</button>
-      <a href="../user" class="material-icons">account_circle</a>
-      <a href="" class="material-icons">help</a>
+      <a href="../" class="material-icons icon-Btn">home</a>
+      <button class="material-icons icon-Btn" onclick="navigator.share({title: 'DevFlix', url: 'https://devflix.io'})">share</button>
+      <a href="../user" class="material-icons icon-Btn">account_circle</a>
+      <a href="" class="material-icons icon-Btn">help</a>
     </nav>
   </body>
 </html>

@@ -1,6 +1,7 @@
 document.cookie = "cookie1=value1; SameSite=Lax";
 import { fetchData, URL, API_KEY } from "../app.js";
 import { saveMovie } from "../save-movie.js";
+import { saveComment, getComments } from "../comments.js";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
@@ -39,3 +40,19 @@ fetchData(URL + TRAILER, (data) => {
 
   document.querySelector("#trailers").innerHTML += `<iframe src="${YOUTUBE}" frameborder="0"></iframe>`;
 });
+
+document.querySelector("#addComment").addEventListener("click", (event) => {
+  event.preventDefault();
+  saveComment(document.querySelector("#commentText").value, params.id);
+  getComments(params.id, renderComments);
+});
+
+getComments(params.id, renderComments);
+
+function renderComments(data) {
+  document.querySelector("#commentList").innerHTML = "";
+  console.log(data);
+  data.comments.forEach((comment) => {
+    document.querySelector("#commentList").innerHTML += `<li class="comment">${comment}</li>`;
+  });
+}
