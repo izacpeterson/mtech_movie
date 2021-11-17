@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <script defer type="module" src="./app.js"></script>
+    <script defer type="module" src="./ratings.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,6 +16,7 @@
     </header>
     <main id="movieDetails">
       <div class="titleInfo">
+        <!-- <img src="" alt="" id="banner" /> -->
         <h2 id="title"></h2>
         <span id="quickInfo">
           <h3 id="release"></h3>
@@ -33,7 +35,18 @@
         </span>
       </div>
       <h2>Rate</h2>
-      <div id="rate"></div>
+
+      <div id="rate">
+        <div id="stars">
+          <p class="material-icons star" id="star1">star_border</p>
+          <p class="material-icons star" id="star2">star_border</p>
+          <p class="material-icons star" id="star3">star_border</p>
+          <p class="material-icons star" id="star4">star_border</p>
+          <p class="material-icons star" id="star5">star_border</p>
+        </div>
+        <div id="rate-button"><button id="rate-submit" class="solid-Btn">submit rating</button></div>
+      </div>
+
       <h2>Trailers</h2>
       <div id="trailers"></div>
       <div id="comments">

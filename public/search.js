@@ -44,7 +44,7 @@ function populateList(jsonData) {
             <button class="material-icons movieBtn icon-Btn" onclick="
               navigator.share({
                 title: 'DevFlix: ${movie.title}',
-                url: 'movieDisc/index.html?id=${movie.id}'
+                url: './movie/?id=${movie.id}'
               })">share
             </button>
             <button id="${movie.id}" class="material-icons movieBtn addMov icon-Btn">playlist_add</button>

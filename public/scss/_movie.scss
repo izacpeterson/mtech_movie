@@ -1,12 +1,16 @@
 #movieDetails {
   display: flex;
-  img {
-    height: 150px;
+  #poster {
+    height: 250px;
+  }
+  #banner {
+    width: 100vw;
   }
   #quickInfo {
     display: flex;
     justify-content: space-around;
   }
+
   h2 {
     font-size: 24px;
     font-weight: 340;
@@ -23,6 +27,20 @@
     #movieInfoRight {
       display: flex;
       flex-direction: column;
+    }
+  }
+  #rate {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    #stars {
+      color: $primary;
+      .star {
+        color: $primary;
+        font-size: 30px;
+      }
     }
   }
   iframe {

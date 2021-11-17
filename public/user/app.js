@@ -71,11 +71,11 @@ async function dispMovies(uid) {
       fetchData(`${URL}movie/${movie}?api_key=${API_KEY}`, (jsonData) => {
         document.querySelector("#movieList").innerHTML += `
         <li class="movie" id="movie-${jsonData.id}">
-          <a href="../movieDisc/index.html?id=${jsonData.id}">  
+          <a href="../movie/?id=${jsonData.id}">  
             <img src="https://image.tmdb.org/t/p/w200/${jsonData.poster_path}" alt="${jsonData.title}-poster"/>
           </a>
             <div class="movieData">
-              <a href="../movieDisc/index.html?id=${jsonData.id}">  
+              <a href="../movie/?id=${jsonData.id}">  
                 <h2>${jsonData.title}</h2>
               </a>
               <h3>Release Date: ${jsonData.release_date}</h3>

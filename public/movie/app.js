@@ -16,12 +16,13 @@ const REC_MOVIE = `/movie/${ID}/recommendations?api_key=${API_KEY}`;
 
 //Movie Info
 fetchData(URL + MOVIE, (data) => {
-  //   console.log(data);
+  console.log(data);
   document.querySelector("#title").innerHTML = data.title;
   document.querySelector("#release").innerHTML = data.release_date;
   document.querySelector("#release").innerHTML = data.release_date;
   document.querySelector("#length").innerHTML = `${data.runtime} mins`;
   document.querySelector("#poster").src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
+  // document.querySelector("#banner").src = `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
   document.querySelector("#description").innerHTML = data.overview;
 });
 

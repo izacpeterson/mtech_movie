@@ -20,8 +20,11 @@
 #movieDetails {
   display: flex;
 }
-#movieDetails img {
-  height: 150px;
+#movieDetails #poster {
+  height: 250px;
+}
+#movieDetails #banner {
+  width: 100vw;
 }
 #movieDetails #quickInfo {
   display: flex;
@@ -44,6 +47,19 @@
 #movieDetails .movieInfo #movieInfoRight {
   display: flex;
   flex-direction: column;
+}
+#movieDetails #rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#movieDetails #rate #stars {
+  color: #e50913;
+}
+#movieDetails #rate #stars .star {
+  color: #e50913;
+  font-size: 30px;
 }
 #movieDetails iframe {
   width: 90vw;
