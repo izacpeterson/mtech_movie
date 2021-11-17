@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer type="module" src="./app.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>&#60;DevFlix/&#62;</h1>
+    </header>
+    <main id="movieDetails">
+      <div class="titleInfo">
+        <h2 id="title"></h2>
+        <span id="quickInfo">
+          <h3 id="release"></h3>
+          <h3 id="rating"></h3>
+          <h3 id="length"></h3>
+        </span>
+      </div>
+      <div class="movieInfo">
+        <img src="" alt="" id="poster" />
+        <span id="movieInfoRight">
+          <span id="description"></span>
+          <span class="movieBtnList">
+            <button class="material-icons movieBtn" id="shareMovie">share</button>
+            <button class="material-icons movieBtn" id="addMovie ">playlist_add</button>
+          </span>
+        </span>
+      </div>
+      <h2>Trailers</h2>
+      <div id="trailers"></div>
+    </main>
+    <nav class="navbar">
+      <a href="../" class="material-icons">home</a>
+      <button class="material-icons" onclick="navigator.share({title: 'DevFlix', url: 'https://devflix.io'})">share</button>
+      <a href="../user" class="material-icons">account_circle</a>
+      <a href="" class="material-icons">help</a>
+    </nav>
+  </body>
+</html>

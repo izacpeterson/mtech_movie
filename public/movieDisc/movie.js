@@ -30,7 +30,6 @@ function runtime_h(runtime) {
   return Math.floor(hours);
 }
 fetchData(URL + REC_MOVIE, (jsonData) => {
-  console.log(jsonData);
   let reco = document.getElementById("rec");
   reco.innerHTML = "";
   jsonData.results.forEach((rec) => {
@@ -44,7 +43,6 @@ fetchData(URL + REC_MOVIE, (jsonData) => {
 });
 fetchData(URL + MOVIE, (jsonData) => {
   document.getElementById("app-genre").innerHTML = "";
-  console.log(jsonData);
   let genres_names = [];
   let genres_ids = [];
   document.getElementById("title").innerText = jsonData.title;
@@ -64,7 +62,6 @@ fetchData(URL + MOVIE, (jsonData) => {
   document.getElementById("app-overview").innerText = jsonData.overview;
 });
 fetchData(URL + MOVIE_AGE, (jsonData) => {
-  console.log(jsonData);
   jsonData.results.forEach((Element) => {
     if (Element.iso_3166_1 == "US") {
       Element.release_dates.forEach((age) => {

@@ -30,11 +30,11 @@ function populateList(jsonData) {
   jsonData.results.forEach((movie) => {
     searchList.innerHTML += `
       <li class="movie">
-        <a href="movieDisc/index.html?id=${movie.id}">
+        <a href="./movie/?id=${movie.id}">
           <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}-poster"/>
         </a>
         <div class="movieData">
-          <a href="movieDisc/index.html?id=${movie.id}">
+          <a href="movie/?id=${movie.id}">
             <h2>${movie.title}</h2>
           </a>
           <h3>Release Date: ${movie.release_date}</h3>
