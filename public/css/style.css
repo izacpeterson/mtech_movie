@@ -101,7 +101,27 @@
   display: flex;
   align-items: center;
 }
+#movieDetails .cast #castList {
+  display: flex;
+  flex-wrap: wrap;
+}
+#movieDetails .cast .castMember {
+  list-style: none;
+  padding: 20px;
+}
+#movieDetails .cast .castMember .castImg {
+  height: 250px;
+}
 
+@media only screen and (max-width: 600px) {
+  #castList {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100vw;
+    overflow-y: scroll;
+  }
+}
 * {
   margin: 0;
   padding: 0;

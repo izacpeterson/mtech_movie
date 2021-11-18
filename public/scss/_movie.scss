@@ -67,4 +67,30 @@
     display: flex;
     align-items: center;
   }
+
+  .cast {
+    #castList {
+      display: flex;
+      flex-wrap: wrap;
+      // overflow: scroll;
+      // overflow-x: hidden;
+    }
+    .castMember {
+      list-style: none;
+      padding: 20px;
+      .castImg {
+        height: 250px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  #castList {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100vw;
+    overflow-y: scroll;
+    // overflow-x: hidden;
+  }
 }

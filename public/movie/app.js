@@ -13,10 +13,11 @@ const MOVIE = `/movie/${ID}?api_key=${API_KEY}`;
 const TRAILER = `/movie/${ID}/videos?api_key=${API_KEY}`;
 const MOVIE_AGE = `/movie/${ID}/release_dates?api_key=${API_KEY}`;
 const REC_MOVIE = `/movie/${ID}/recommendations?api_key=${API_KEY}`;
+const CREDITS = `/movie/${ID}/credits?api_key=${API_KEY}`;
+const SIMILAR = `/movie/${ID}/similar?api_key=${API_KEY}`;
 
 //Movie Info
 fetchData(URL + MOVIE, (data) => {
-  console.log(data);
   document.querySelector("#title").innerHTML = data.title;
   document.querySelector("#release").innerHTML = data.release_date;
   document.querySelector("#release").innerHTML = data.release_date;
@@ -28,7 +29,6 @@ fetchData(URL + MOVIE, (data) => {
 
 //Trailers
 fetchData(URL + TRAILER, (data) => {
-  console.log(data);
   let YOUTUBE = "https://www.youtube.com/embed/";
   YOUTUBE += data.results[0].key + "?playlist=";
 
@@ -52,8 +52,52 @@ getComments(params.id, renderComments);
 
 function renderComments(data) {
   document.querySelector("#commentList").innerHTML = "";
-  console.log(data);
-  data.comments.forEach((comment) => {
-    document.querySelector("#commentList").innerHTML += `<li class="comment">${comment}</li>`;
-  });
+  if (data.comments) {
+    data.comments.forEach((comment) => {
+      document.querySelector("#commentList").innerHTML += `<li class="comment">${comment}</li>`;
+    });
+  }
 }
+
+fetchData(URL + CREDITS, (data) => {
+  let castList = document.querySelector("#castList");
+
+  data.cast.forEach((castMember) => {
+    castList.innerHTML += `
+  <li class="castMember">
+    <img class="castImg" src="https://image.tmdb.org/t/p/w500/${castMember.profile_path}" />
+    <h2>${castMember.name}</h2>
+    <h3>${castMember.character}</h3>
+  </li>
+  `;
+  });
+});
+
+fetchData(URL + SIMILAR, (data) => {
+  data.results.forEach((movie) => {
+    console.log(movie);
+    document.querySelector("#recommend").innerHTML += `
+      <li class="movie">
+        <a href="./movie/?id=${movie.id}">
+          <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}-poster"/>
+        </a>
+        <div class="movieData">
+          <a href="?id=${movie.id}">
+            <h2>${movie.title}</h2>
+          </a>
+          <h3>Release Date: ${movie.release_date}</h3>
+          <h3>Rating: ${movie.vote_average}/10</h3>
+          <!-- <span class="movieDescription">${movie.overview}</span> -->
+          <span class='movieBtnList'>
+            <button class="material-icons movieBtn icon-Btn" onclick="
+              navigator.share({
+                title: 'DevFlix: ${movie.title}',
+                url: './movie/?id=${movie.id}'
+              })">share
+            </button>
+            <button id="${movie.id}" class="material-icons movieBtn addMov icon-Btn">playlist_add</button>
+          </span>
+        </div>
+      </li>`;
+  });
+});
