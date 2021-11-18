@@ -57,3 +57,7 @@ function renderComments(data) {
     document.querySelector("#commentList").innerHTML += `<li class="comment">${comment}</li>`;
   });
 }
+
+document.getElementById('addMovie').addEventListener("click", ()=>{
+  saveMovie(ID)
+})
