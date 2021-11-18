@@ -70,16 +70,17 @@ async function rateMovie(rating, movieID) {
   const docRef = doc(db, "movies", movieID);
   const docSnap = await getDoc(docRef);
 
-  if (docSnap.data().ratings) {
-    let ratings = docSnap.data().ratings;
-    ratings.push(rating);
+  if (docSnap.exists()) {
+    if (docSnap.data().ratings) {
+      let ratings = docSnap.data().ratings;
+      ratings.push(rating);
 
-    await updateDoc(docRef, { ratings: ratings });
+      await updateDoc(docRef, { ratings: ratings });
+    }
   } else {
     console.log("no data found");
-
     let ratings = [rating];
-    await updateDoc(docRef, { ratings: ratings });
+    await setDoc(docRef, { ratings: ratings });
   }
 
   getRatings(params.id);
@@ -89,7 +90,7 @@ async function getRatings(ID) {
   const docRef = doc(db, "movies", params.id);
   const docSnap = await getDoc(docRef);
 
-  if (docSnap.data().ratings) {
+  if (docSnap.exists()) {
     document.querySelector("#averageRating").innerHTML = "";
 
     let sum = 0;
@@ -104,3 +105,4 @@ async function getRatings(ID) {
 }
 
 getRatings(params.id);
+
