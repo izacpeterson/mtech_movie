@@ -105,3 +105,4 @@ async function getRatings(ID) {
 }
 
 getRatings(params.id);
+

@@ -101,3 +101,6 @@ fetchData(URL + SIMILAR, (data) => {
       </li>`;
   });
 });
+document.getElementById("addMovie").addEventListener("click", () => {
+  saveMovie(ID);
+});
