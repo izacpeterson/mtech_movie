@@ -61,10 +61,16 @@ main {
 #searchResult,
 .searchResult {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  // justify-content: space-evenly;
+  flex-wrap: wrap;
   .movie {
     display: flex;
     margin-top: 20px;
+    // background: $back-2;
+    // box-shadow: $shadow;
+    // border-radius: $border-radius;
+    // width: 100%;
     img {
       height: 150px;
     }
@@ -83,5 +89,10 @@ nav {
 #about {
   img {
     width: 50%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .movie {
+    width: 30%;
   }
 }

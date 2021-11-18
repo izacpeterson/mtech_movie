@@ -19,6 +19,14 @@ $shadow: 0 0 10px #090909;
   background: none;
   border: none;
   color: $primary;
+  transition: 0.1s;
+  &:hover {
+    color: $text;
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1.4);
+  }
 }
 .solid-Btn {
   background: $primary;
@@ -26,4 +34,11 @@ $shadow: 0 0 10px #090909;
   color: $text;
   border: none;
   padding: 10px;
+  transition: 0.1s;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1.2);
+  }
 }

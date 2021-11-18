@@ -9,8 +9,11 @@
   #quickInfo {
     display: flex;
     justify-content: space-around;
+    width: 100vw;
   }
-
+  #title {
+    text-align: center;
+  }
   h2 {
     font-size: 24px;
     font-weight: 340;

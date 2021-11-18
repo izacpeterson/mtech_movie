@@ -7,6 +7,14 @@
   background: none;
   border: none;
   color: #e50913;
+  transition: 0.1s;
+}
+.icon-Btn:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.icon-Btn:active {
+  transform: scale(1.4);
 }
 
 .solid-Btn {
@@ -15,6 +23,13 @@
   color: #fff;
   border: none;
   padding: 10px;
+  transition: 0.1s;
+}
+.solid-Btn:hover {
+  cursor: pointer;
+}
+.solid-Btn:active {
+  transform: scale(1.2);
 }
 
 #movieDetails {
@@ -29,6 +44,10 @@
 #movieDetails #quickInfo {
   display: flex;
   justify-content: space-around;
+  width: 100vw;
+}
+#movieDetails #title {
+  text-align: center;
 }
 #movieDetails h2 {
   font-size: 24px;
@@ -150,7 +169,7 @@ main {
 #searchResult,
 .searchResult {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 #searchResult .movie,
 .searchResult .movie {
@@ -175,6 +194,12 @@ nav {
 
 #about img {
   width: 50%;
+}
+
+@media only screen and (min-width: 600px) {
+  .movie {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
