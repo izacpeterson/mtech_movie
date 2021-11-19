@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
 .text-primary {
-  color: #e50913;
+  color: #ed1c24;
 }
 
 .icon-Btn {
   background: none;
   border: none;
-  color: #e50913;
+  color: #ed1c24;
   transition: 0.1s;
 }
 .icon-Btn:hover {
@@ -18,7 +18,7 @@
 }
 
 .solid-Btn {
-  background: #e50913;
+  background: #ed1c24;
   border-radius: 5px;
   color: #fff;
   border: none;
@@ -74,10 +74,10 @@
   justify-content: center;
 }
 #movieDetails #rate #stars {
-  color: #e50913;
+  color: #ed1c24;
 }
 #movieDetails #rate #stars .star {
-  color: #e50913;
+  color: #ed1c24;
   font-size: 30px;
 }
 #movieDetails iframe {
@@ -95,7 +95,7 @@
   margin-bottom: 10px;
 }
 #movieDetails .comment {
-  color: #e50913;
+  color: #ed1c24;
   margin: 20px;
   border-bottom: black 1px solid;
   display: flex;
@@ -141,7 +141,7 @@ header {
 
 h1 {
   font-size: 32px;
-  color: #e50913;
+  color: #ed1c24;
 }
 
 h2 {
