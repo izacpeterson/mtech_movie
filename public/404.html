@@ -15,7 +15,7 @@
 
     <link rel="icon" href="./img/Logo/logo_favicon_192.png" />
 
-    <title>DevFlix</title>
+    <title>Error</title>
 
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   </head>
@@ -23,15 +23,10 @@
     <header>
       <h1>&#60;DevFlix/&#62;</h1>
     </header>
-    <main id="homepage">
-      <form action="" id="searchBox">
-        <h2>Find your favorite movies</h2>
-        <span class="searchBar">
-          <input type="text" placeholder="title" id="queryText" />
-          <button class="solid-Btn" type="submit" id="searchBtn">Search</button>
-        </span>
-      </form>
-      <ul id="searchResult" class="searchResult"></ul>
+    <main>
+      <h1>The page you are looking for cannot be found</h1>
+      <h2>Please reach out to the developer to get that fixed</h2>
+      <h3>Email me at izacpeterson@gmail.com</h3>
     </main>
     <nav class="navbar">
       <a href="./" class="material-icons icon-Btn">home</a>
@@ -39,18 +34,5 @@
       <a href="./user" class="material-icons icon-Btn">account_circle</a>
       <a href="./about" class="material-icons icon-Btn">help</a>
     </nav>
-    <script>
-      var data = {
-        content: "New Visitor on DevFlix " + new Date().toLocaleTimeString(),
-      };
-      var options = {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      };
-      fetch("https://discordapp.com/api/webhooks/770724245214986261/qQTsNZsFXoiRopoc6EB3p0Ixt7427RkLd-BB_Cf4xKcWoOhFmvV1__2wJu590gkEAwmz", options);
-    </script>
   </body>
 </html>
