@@ -87,8 +87,12 @@ nav {
   box-shadow: $shadow;
 }
 #about {
+  color: white;
   img {
     width: 50%;
+  }
+  a {
+    color: $primary;
   }
 }
 @media only screen and (min-width: 600px) {

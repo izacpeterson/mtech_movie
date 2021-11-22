@@ -25,6 +25,8 @@ fetchData(URL + MOVIE, (data) => {
   document.querySelector("#poster").src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
   // document.querySelector("#banner").src = `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
   document.querySelector("#description").innerHTML = data.overview;
+
+  document.querySelector("title").innerHTML = data.title;
 });
 
 //Trailers
@@ -78,7 +80,7 @@ fetchData(URL + SIMILAR, (data) => {
     console.log(movie);
     document.querySelector("#recommend").innerHTML += `
       <li class="movie">
-        <a href="./movie/?id=${movie.id}">
+        <a href="?id=${movie.id}">
           <img src="https://image.tmdb.org/t/p/w200/${movie.poster_path}" alt="${movie.title}-poster"/>
         </a>
         <div class="movieData">

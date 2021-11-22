@@ -212,8 +212,14 @@ nav {
   box-shadow: 0 0 10px #090909;
 }
 
+#about {
+  color: white;
+}
 #about img {
   width: 50%;
+}
+#about a {
+  color: #ed1c24;
 }
 
 @media only screen and (min-width: 600px) {
